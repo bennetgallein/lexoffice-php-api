@@ -38,7 +38,7 @@ class ClientTest extends TestClient {
         $stub = $this->createClientMockObject(
             Client::class,
             new Response(200, [], 'body'),
-            ['generateUrl', 'setFilters']
+            ['generateUrl', 'setFilters', 'resetFilters']
         );
 
         $this->assertEquals(
