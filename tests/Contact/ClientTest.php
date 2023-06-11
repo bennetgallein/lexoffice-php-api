@@ -32,4 +32,18 @@ class ClientTest extends TestClient {
             $stub->setFilters(['name' => "Bennet"])->generateUrl(0)
         );
     }
+
+
+    public function testGenerateUrlWithFiltersReset() {
+        $stub = $this->createClientMockObject(
+            Client::class,
+            new Response(200, [], 'body'),
+            ['generateUrl', 'setFilters']
+        );
+
+        $this->assertEquals(
+            'contacts?page=0&size=100&direction=ASC&property=name',
+            $stub->setFilters(['name' => "Bennet"])->resetFilters()->generateUrl(0)
+        );
+    }
 }
