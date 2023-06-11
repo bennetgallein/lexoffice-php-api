@@ -37,13 +37,18 @@ class Client extends PaginationClient {
      * - vendor: if set to true filters contacts that have the role vendor. If set to false filters contacts that do not have the vendor role.
      *
      * @param array $filters
-     * @return void
+     * @return $this
      */
     public function setFilters($filters = []) {
         $this->filters = $filters;
         return $this;
     }
 
+    /**
+     * reset all filters
+     *
+     * @return $this
+     */
     public function resetFilters() {
         $this->filters = [];
         return $this;
