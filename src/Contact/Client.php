@@ -41,6 +41,7 @@ class Client extends PaginationClient {
      */
     public function setFilters($filters = []) {
         $this->filters = $filters;
+        return $this;
     }
 
     public function resetFilters() {
